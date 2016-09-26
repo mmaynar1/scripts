@@ -1,6 +1,7 @@
 #!/bin/bash
-changedFilesPath=~/Documents/changedFiles
-projectFilesPath=~/Documents/projectFiles
+changedFilesPath=$1
+projectFilesPath=$2
+fileExtension=$3
 
 changedFiles=($( ls -p $changedFilesPath | grep -v  / ))
 changedFilesLength=0
@@ -8,8 +9,8 @@ for i in "${changedFiles[@]}" ; do
         let changedFilesLength=$changedFilesLength+1
 done
 
-projectFiles=($(find $projectFilesPath -name "*.txt" -printf "%f\n"))
-projectFilesFullPaths=($(find $projectFilesPath -name "*.txt" -print))
+projectFiles=($(find $projectFilesPath -name "*.$fileExtension" -printf "%f\n"))
+projectFilesFullPaths=($(find $projectFilesPath -name "*.$fileExtension" -print))
 projectFilesLength=0
 for i in "${projectFiles[@]}"; do
         let projectFilesLength=$projectFilesLength+1

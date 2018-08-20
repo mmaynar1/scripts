@@ -1,0 +1,5 @@
+//List every author that has contributed to the repository
+git log --format='%an <%ae>' | sort | uniq
+
+//List every file an author has modified
+git log --no-merges --author="Pattern" --name-only --pretty=format:"" | sort -u

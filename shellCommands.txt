@@ -1,0 +1,9 @@
+//Zip from within directory
+zip -r checkpair.zip *
+
+//Grab first n lines of file (take a sample)
+head -n10 apps095e548e-3e2f-11ec-9bbc-0242ac130002.txt >> sample-not-autopush-content.txt
+
+//Split files in half
+head -n 66611 apps095e548e-3e2f-11ec-9bbc-0242ac130002.txt > 1apps095e548e-3e2f-11ec-9bbc-0242ac130002.txt
+tail -n +66612 apps095e548e-3e2f-11ec-9bbc-0242ac130002.txt > 2apps095e548e-3e2f-11ec-9bbc-0242ac130002.txt
